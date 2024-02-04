@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+// Importaciones
 use Illuminate\Http\Request;
-
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Session;
 class LoginController extends Controller
 {
 
+    // Función para registarar los usuarios
     public function register(Request $request)
     {
         $user = new User();
@@ -41,10 +42,11 @@ class LoginController extends Controller
         return redirect(route('login'));
     }
 
+    // Función para logear al usuario tanto como admin como normal
     public function login(Request $request)
     {
 
-        // Validación 
+        // Validación  de las credenciales
         $credentials = [
             "email" => $request->email,
             "password" => $request->password
@@ -53,12 +55,20 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect(route('privada'))->with('success', 'Acceso exitoso.');
+            // Verificar el rol del usuario
+            if (Auth::user()->rol == 1) {
+                // Usuario Administrador
+                return redirect(route('admin.privada'))->with('success', 'Acceso exitoso.');
+            } else {
+                // Usuario Normal
+                return redirect(route('privada'))->with('success', 'Acceso exitoso.');
+            }
         } else {
             return redirect('login')->with('error', 'Usuario o contraseña incorrectos.');
         }
     }
 
+    // Función para salir de la sesión
     public function logout(Request $request)
     {
         Auth::logout();
@@ -69,6 +79,7 @@ class LoginController extends Controller
         return redirect(route('login'));
     }
 
+    // Función solo para el usuario, para mostrar el perfil del usuario
     public function mostrarPerfil()
     {
         $usuario = Auth::user();
@@ -83,6 +94,7 @@ class LoginController extends Controller
         return view('edit-nick', compact('usuario'));
     }
 
+    // Función solo para el usuario, modificar el nick
     public function updateNick(Request $request)
     {
         $user = auth()->user();
@@ -99,7 +111,7 @@ class LoginController extends Controller
         return redirect()->route('profile')->with('success', 'Nick actualizado correctamente.');
     }
 
-    // EDITAR EL EMAIL
+    // Función solo para el usuario, editar el correo electronico
     public function editEmail()
     {
         $usuario = auth()->user();

@@ -1,17 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Catálogo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo</title>
 </head>
 
 <body>
     <h1>Catálogo de Productos</h1>
-
-    <!-- Agregamos un formulario para enviar la solicitud de ordenamiento -->
-    <form action="{{ route('mostrarCatalogo') }}" method="get">
-        <button type="submit" name="sort" value="precio_asc">Ordenar por Precio (Menor a Mayor)</button>
-    </form>
 
     <table>
         <thead>
@@ -33,19 +30,13 @@
                 <td>{{ $catalogo->unidades }}</td>
                 <td>{{ $catalogo->precio_unitario }}</td>
                 <td>{{ $catalogo->categoria }}</td>
-                <td>
-                    <!-- Agregamos un formulario y un botón de submit para agregar al carrito -->
-                    <form action="{{ route('carrito.agregar', ['productoId' => $catalogo->id]) }}" method="post">
-                        @csrf
-                        <button type="submit">Agregar al Carrito</button>
-                    </form>
-                </td>
             </tr>
             @endforeach
         </tbody>
-    
+
+
     </table>
-    <a href="{{ route('privada') }}"><button type="button">Atrás</button></a>
+    <a href="{{ route('admin.privada') }}"><button type="button">Atrás</button></a>
 
     <!-- Mostrar mensajes al usuario -->
     @if(session('success'))
