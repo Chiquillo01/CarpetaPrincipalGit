@@ -21,7 +21,7 @@ class AdminController extends Controller
 
     public function crearProductoForm()
     {
-        return view('admin.crearProducto');
+        return view('admin.catalogo');
     }
 
     public function crearProducto(Request $request)
@@ -40,7 +40,7 @@ class AdminController extends Controller
         // Redirige de nuevo a la vista del catálogo
         return redirect(route('admin.catalogo'))->with('success', 'Producto creado exitosamente.');
     }
-    
+
 
     // CRUD para las categorias
     public function showCategorias()
@@ -52,6 +52,26 @@ class AdminController extends Controller
         return view('admin.catalogo', compact('categorias'));
     }
 
+    public function crearCategoriaForm()
+    {
+        return view('admin.crearCategoria');
+    }
+
+    public function crearCategoria(Request $request)
+    {
+        // Lógica para validar y guardar el nuevo catalogo en la base de datos
+        $nuevoCatalogo = new Catalogo([
+            'id_categoria' => $request->input('id_categoria'),
+            'nombre' => $request->input('nombre'),
+            'descripcion' => $request->input('descripcion')
+        ]);
+
+        $nuevoCatalogo->save();
+
+        // Redirige de nuevo a la vista del catálogo
+        return redirect(route('admin.catalogo'))->with('success', 'Categoria exitosamente.');
+    }
+
     // CRUD para los usuarios
     public function showUser()
     {
@@ -59,6 +79,31 @@ class AdminController extends Controller
         $users = User::all();
 
         // Retorna la vista con los datos
-        return view('admin.catalogo', compact('users'));
+        return view('admin.usuarios', compact('users'));
+    }
+
+    public function crearUserForm()
+    {
+        return view('admin.usuarios.crear');
+    }
+
+    public function crearUsuario(Request $request)
+    {
+        // Lógica para validar y guardar el nuevo producto en la base de datos
+        $nuevoProducto = new Catalogo([
+            'nick' => $request->input('nick'),
+            'email' => $request->input('email'),
+            'nombre' => $request->input('nombre'),
+            'apellido' => $request->input('apellido'),
+            'dni' => $request->input('dni'),
+            'fecha' => $request->input('fecha'),
+            'password' => $request->input('password'),
+            'rol' => $request->input('rol')
+        ]);
+
+        $nuevoProducto->save();
+
+        // Redirige de nuevo a la vista del catálogo
+        return redirect(route('admin.catalogo'))->with('success', 'Producto creado exitosamente.');
     }
 }
