@@ -23,7 +23,7 @@
         <button type="button">Relacionado con Usuarios</button>
     </a><br>
 
-    <a href="{{route('logout')}}"><button type="button">Salir</button></a>
+    <a href="{{route('logout')}}"><button type="button" onclick="confirmLogout()">Salir</button></a>
 
 
     <!-- Mostrar mensajes al usuario -->
@@ -42,3 +42,15 @@
 </body>
 
 </html>
+
+<script>
+    function confirmLogout() {
+        // Mostrar cuadro de diálogo de confirmación
+        var confirmLogout = confirm("¿Estás seguro de que quieres salir?");
+        
+        // Si el usuario confirma, redirigir a la página de cierre de sesión
+        if (confirmLogout) {
+            window.location.href = "{{ route('logout') }}";
+        }
+    }
+</script>
