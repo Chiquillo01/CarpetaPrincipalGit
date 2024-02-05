@@ -9,7 +9,8 @@
 
 <body>
     <h1>Catálogo de Productos</h1>
-
+    <!-- Botón para ir al formulario de creación -->
+    <a href="{{ route('admin.catalogo.crear.form') }}"><button type="button">Crear Nuevo Catalogo</button></a>
     <table>
         <thead>
             <tr>
@@ -32,7 +33,7 @@
                 <td>{{ $catalogo->categoria }}</td>
                 <td>
                     <!-- Botón para eliminar producto -->
-                    <form method="post" action="{{ route('admin.usuarios.eliminar', $catalogo->id) }}">
+                    <form method="post" action="{{ route('admin.catalogo.eliminar', $catalogo->id) }}">
                         @csrf
                         @method('delete')
                         <button type="submit">Eliminar</button>

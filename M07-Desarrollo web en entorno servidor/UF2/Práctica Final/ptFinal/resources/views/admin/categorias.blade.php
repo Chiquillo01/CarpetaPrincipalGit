@@ -9,7 +9,8 @@
 
 <body>
     <h1>Lista de categorías</h1>
-
+    <!-- Botón para ir al formulario de creación -->
+    <a href="{{ route('admin.categorias.crear.form') }}"><button type="button">Crear Nueva Categoría</button></a>
     <table>
         <thead>
             <tr>
@@ -26,7 +27,7 @@
                 <td>{{ $categoria->descripcion }}</td>
                 <td>
                     <!-- Botón para eliminar producto -->
-                    <form method="post" action="{{ route('admin.categorias.eliminar', $categoria->id_categoria) }}">
+                    <form method="post" action="{{ route('admin.categorias.eliminar', $categoria->id) }}">
                         @csrf
                         @method('delete')
                         <button type="submit">Eliminar</button>
@@ -35,22 +36,23 @@
             </tr>
             @endforeach
         </tbody>
+    </table>
 
-        <a href="{{ route('admin.privada') }}"><button type="button">Atrás</button></a>
+    <a href="{{ route('admin.privada') }}"><button type="button">Atrás</button></a>
 
-        <!-- Mostrar mensajes al usuario -->
-        @if(session('success'))
-        <div style="color: green;">
-            {{ session('success') }}
-        </div>
-        @endif
+    <!-- Mostrar mensajes al usuario -->
+    @if(session('success'))
+    <div style="color: green;">
+        {{ session('success') }}
+    </div>
+    @endif
 
-        @if(session('error'))
-        <div style="color: red;">
-            {{ session('error') }}
-        </div>
-        @endif
-        <!-- ------------------ -->
+    @if(session('error'))
+    <div style="color: red;">
+        {{ session('error') }}
+    </div>
+    @endif
+    <!-- ------------------ -->
 </body>
 
 </html>

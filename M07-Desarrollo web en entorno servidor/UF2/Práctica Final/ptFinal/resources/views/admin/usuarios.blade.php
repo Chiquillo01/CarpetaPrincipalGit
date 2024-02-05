@@ -9,7 +9,8 @@
 
 <body>
     <h1>Lista de usuarios</h1>
-
+   <!-- Botón para ir al formulario de creación -->
+   <a href="{{ route('admin.crearUsuarioForm') }}"><button type="button">Crear Nuevo Usuario</button></a>
     <table>
         <thead>
             <th>Nick</th>
@@ -32,7 +33,7 @@
                 <td>{{ $user->rol ? 'Admin' : 'Usuario' }}</td>
                 <td>
                     <!-- Botón para eliminar producto -->
-                    <form method="post" action="{{ route('admin.categorias.eliminar', $user->id) }}">
+                    <form method="post" action="{{ route('admin.usuarios.eliminar', $user->id) }}">
                         @csrf
                         @method('delete')
                         <button type="submit">Eliminar</button>

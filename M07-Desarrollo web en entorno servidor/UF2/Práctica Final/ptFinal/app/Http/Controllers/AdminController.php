@@ -21,7 +21,7 @@ class AdminController extends Controller
 
     public function crearProductoForm()
     {
-        return view('admin.catalogo');
+        return view('admin.crearProducto');
     }
 
     public function crearProducto(Request $request)
@@ -60,7 +60,7 @@ class AdminController extends Controller
 
     // ----------------------------
     // ----------------------------
-
+    // ----------------------------
 
     // CRUD para las categorias
     public function showCategorias()
@@ -111,6 +111,7 @@ class AdminController extends Controller
 
     // ----------------------------
     // ----------------------------
+    // ----------------------------
 
     // CRUD para los usuarios
     public function showUsuarios()
@@ -122,9 +123,9 @@ class AdminController extends Controller
         return view('admin.usuarios', compact('users'));
     }
 
-    public function crearUserForm()
+    public function crearUsuarioForm()
     {
-        return view('admin.usuarios.crear');
+        return view('admin.crearUsuarioForm');
     }
 
     public function crearUsuario(Request $request)
@@ -144,7 +145,7 @@ class AdminController extends Controller
         $nuevoProducto->save();
 
         // Redirige de nuevo a la vista del catálogo
-        return redirect(route('admin.catalogo'))->with('success', 'Producto creado exitosamente.');
+        return redirect(route('admin.usuarios'))->with('success', 'Usuario creado exitosamente.');
     }
 
     public function eliminarUsuario($id)
