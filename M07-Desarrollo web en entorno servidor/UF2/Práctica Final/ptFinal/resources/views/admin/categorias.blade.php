@@ -24,6 +24,14 @@
                 <td>{{ $categoria->id }}</td>
                 <td>{{ $categoria->nombre }}</td>
                 <td>{{ $categoria->descripcion }}</td>
+                <td>
+                    <!-- Botón para eliminar producto -->
+                    <form method="post" action="{{ route('admin.categorias.eliminar', $categoria->id_categoria) }}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

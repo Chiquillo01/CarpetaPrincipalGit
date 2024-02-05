@@ -30,6 +30,14 @@
                 <td>{{ $catalogo->unidades }}</td>
                 <td>{{ $catalogo->precio_unitario }}</td>
                 <td>{{ $catalogo->categoria }}</td>
+                <td>
+                    <!-- Botón para eliminar producto -->
+                    <form method="post" action="{{ route('admin.usuarios.eliminar', $catalogo->id) }}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

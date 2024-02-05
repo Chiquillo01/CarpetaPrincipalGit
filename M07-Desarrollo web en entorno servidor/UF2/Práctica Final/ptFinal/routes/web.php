@@ -10,7 +10,6 @@ use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\AdminController;
 
 /* Vistas Principales */
-
 Route::view('/login', "login")->name('login');
 Route::view('/registro', "register")->name('registro');
 

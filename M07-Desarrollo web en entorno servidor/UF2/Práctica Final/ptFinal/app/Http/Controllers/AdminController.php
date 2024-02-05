@@ -41,6 +41,26 @@ class AdminController extends Controller
         return redirect(route('admin.catalogo'))->with('success', 'Producto creado exitosamente.');
     }
 
+    public function eliminarProducto($id)
+    {
+        // Buscar el producto por ID
+        $producto = Catalogo::find($id);
+
+        if (!$producto) {
+            // Si el producto no existe, redirigir con un mensaje de error
+            return redirect()->route('admin.catalogo')->with('error', 'El producto no existe.');
+        }
+
+        // Eliminar el producto
+        $producto->delete();
+
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('admin.catalogo')->with('success', 'Producto eliminado exitosamente.');
+    }
+
+    // ----------------------------
+    // ----------------------------
+
 
     // CRUD para las categorias
     public function showCategorias()
@@ -49,7 +69,7 @@ class AdminController extends Controller
         $categorias = Categorias::all();
 
         // Retorna la vista con los datos
-        return view('admin.catalogo', compact('categorias'));
+        return view('admin.categorias', compact('categorias'));
     }
 
     public function crearCategoriaForm()
@@ -72,8 +92,28 @@ class AdminController extends Controller
         return redirect(route('admin.catalogo'))->with('success', 'Categoria exitosamente.');
     }
 
+    public function eliminarCategoria($id)
+    {
+        // Buscar el producto por ID
+        $categoria = Categorias::find($id);
+
+        if (!$categoria) {
+            // Si el producto no existe, redirigir con un mensaje de error
+            return redirect()->route('admin.categorias')->with('error', 'La categoria no existe.');
+        }
+
+        // Eliminar el producto
+        $categoria->delete();
+
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('admin.catalogo')->with('success', 'Categoria eliminado exitosamente.');
+    }
+
+    // ----------------------------
+    // ----------------------------
+
     // CRUD para los usuarios
-    public function showUser()
+    public function showUsuarios()
     {
         // Lógica para obtener los productos del catálogo desde la base de datos
         $users = User::all();
@@ -105,5 +145,22 @@ class AdminController extends Controller
 
         // Redirige de nuevo a la vista del catálogo
         return redirect(route('admin.catalogo'))->with('success', 'Producto creado exitosamente.');
+    }
+
+    public function eliminarUsuario($id)
+    {
+        // Buscar el producto por ID
+        $usuario = User::find($id);
+
+        if (!$usuario) {
+            // Si el producto no existe, redirigir con un mensaje de error
+            return redirect()->route('admin.usuarios')->with('error', 'El usuario no existe.');
+        }
+
+        // Eliminar el producto
+        $usuario->delete();
+
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('admin.usuarios')->with('success', 'Usuario eliminado exitosamente.');
     }
 }

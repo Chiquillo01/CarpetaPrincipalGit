@@ -23,13 +23,21 @@
         <tbody>
             @foreach($users as $user)
             <tr>
-            <td>{{ $user->nick }}</td>
-            <td>{{ $user->email }}</td>
-            <td>{{ $user->nombre }}</td>
-            <td>{{ $user->apellido }}</td>
-            <td>{{ $user->dni }}</td>
-            <td>{{ $user->fecha }}</td>
-            <td>{{ $user->rol ? 'Admin' : 'Usuario' }}</td>
+                <td>{{ $user->nick }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->nombre }}</td>
+                <td>{{ $user->apellido }}</td>
+                <td>{{ $user->dni }}</td>
+                <td>{{ $user->fecha }}</td>
+                <td>{{ $user->rol ? 'Admin' : 'Usuario' }}</td>
+                <td>
+                    <!-- Botón para eliminar producto -->
+                    <form method="post" action="{{ route('admin.categorias.eliminar', $user->id) }}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
