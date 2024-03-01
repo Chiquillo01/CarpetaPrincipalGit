@@ -1,0 +1,44 @@
+.container>p{
+    // background: red;
+    display: flex;
+}
+
+.card{
+    background: rgb(191, 191, 191);
+    margin: auto;
+    
+    width: 80%;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.branding{
+    // background: burlywood;
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+.containerflex>img{
+    width: 10%;
+}
+
+form{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding-inline: 50px;
+    &>*{
+        width: 100%;
+    }
+}
+
+form>label{
+    text-align: left;
+}
+
+form>input{
+    border-radius: 10px;
+}

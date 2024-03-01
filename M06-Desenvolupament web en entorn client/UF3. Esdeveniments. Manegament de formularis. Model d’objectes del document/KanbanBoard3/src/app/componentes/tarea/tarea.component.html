@@ -1,0 +1,35 @@
+<mat-card class="card-container">
+  <img *ngIf="tarea.img"
+    class="task-image"
+    mat-card-image
+    [src]="tarea.img"
+    alt="Photo of a Task"
+  />
+
+  <mat-card-header>
+    <mat-card-title>{{ tarea.titulo }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="user-container">
+      <div *ngFor="let user of tarea.usuarios"
+        mat-card-avatar
+        class="user-image"
+        [ngStyle]="{'background-image': 'url(' + (user.img ?? 'https://picsum.photos/id/237/200/300') + ')'}"
+      ></div>
+    </div>
+
+    <p>
+      {{ tarea.descripcion }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions class="action-container">
+    <button class="action" mat-fab color="primary">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button class="action" mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

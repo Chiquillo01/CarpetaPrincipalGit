@@ -1,0 +1,102 @@
+body{
+  background: #F3F4F6;
+}
+
+.container > p {
+  background: red;
+  display: flex;
+}
+
+.card {
+  background: white;
+  margin: auto;
+  width: 65%;
+  border-radius: 20px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.branding {
+  /* background: burlywood; */
+  display: flex;
+  margin-top: 3%;
+  justify-content: center;
+}
+
+.containerflex > img {
+  width: 10%;
+}
+
+form {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  padding-inline: 50px;
+  border-radius: 20%;
+}
+
+form > * {
+  width: 95%;
+}
+
+form > label {
+  text-align: left;
+  font-size: 20px;
+}
+
+form > input {
+  border-radius: 10px;
+  height: 50px;
+}
+
+button{
+  height: 40px;
+  background: white;
+}
+
+.container-remember{
+  display: flex; /* Establece un contenedor flexible */
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  margin-top: 10px;
+}
+
+.container-remember>button{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  justify-content: right;
+  border-radius: 30%;
+}
+
+.container-remember>p{
+  text-align: left;
+  font-size: 23px;
+  margin-left: 14px;
+}
+
+.buttonsUser {
+  display: flex;
+  margin-top: 25px;
+  align-items: center;
+}
+
+.buttonsUser > a {
+  color: black;
+  text-align: left;
+  font-size: 19px;
+  margin-left: 20px;
+  justify-content: left;
+}
+
+.buttonsUser>button{
+  justify-content: center;
+}
+
+.container-box {
+  display: flex;
+  justify-content: left; /* Distribuye los elementos a lo largo del contenedor */
+  align-items: center; /* Alinea los elementos verticalmente */
+}

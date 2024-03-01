@@ -1,0 +1,16 @@
+<div class="page-container">
+  <mat-accordion>
+
+    <mat-expansion-panel *ngFor="let lista of obtenerNombreListas()">
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{lista}} </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="tareas-container">
+        <app-tarea [tarea]="tarea" *ngFor="let tarea of obtenerTareasParaLista(lista)"></app-tarea>
+      </div>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>

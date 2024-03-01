@@ -1,0 +1,29 @@
+.card-container {
+  max-width: 400px;
+  margin: 10px;
+}
+
+.task-image {
+  max-height: 100px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.user-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-image {
+  background-size: cover;
+  margin: 5px;
+}
+
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action {
+  margin: 5px;
+}

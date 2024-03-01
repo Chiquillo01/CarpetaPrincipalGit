@@ -1,0 +1,10 @@
+<form [formGroup]="registerForm" (ngSubmit)="enviarRegistro()">
+    <label for="">Email</label>
+    <input type="text" formControlName="email">
+
+    <label for="">Password</label>
+    <input type="password" formControlName="password">
+
+    <label for="">Repita Password</label>
+    <input type="password" formControlName="rpassword">
+</form>>

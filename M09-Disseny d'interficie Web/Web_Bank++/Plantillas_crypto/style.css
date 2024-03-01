@@ -1,0 +1,112 @@
+@charset "UTF-8";
+* {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "ui-monospace", sans-serif;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.tarjetas {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  overflow: auto;
+}
+.tarjetas::-webkit-scrollbar {
+  display: none;
+}
+.tarjetas p {
+  margin: 0;
+  font-size: 23px;
+}
+.tarjetas p:after {
+  content: "€";
+}
+.tarjetas .tarjeta {
+  background: rgba(0, 128, 0, 0.541);
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: end;
+  border-radius: 10px;
+  font-size: 23px;
+}
+.tarjetas .tarjeta svg {
+  width: 50px;
+  height: 50px;
+}
+.tarjetas .tarjeta:first-child {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.tarjetas .tarjeta:nth-child(2) {
+  background-color: rgba(179, 255, 0, 0.2);
+}
+.tarjetas .tarjeta:nth-child(3) {
+  background-color: rgba(255, 238, 0, 0.2);
+}
+.tarjetas .tarjeta:nth-child(4) {
+  background-color: rgba(0, 255, 242, 0.2);
+}
+.tarjetas .tarjeta:nth-child(5) {
+  background-color: rgba(234, 0, 255, 0.2);
+}
+.tarjetas .tarjeta:nth-child(6) {
+  background-color: rgba(0, 255, 13, 0.2);
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.data > * {
+  width: 50%;
+}
+.data .graphic {
+  background: url("assets/Rectangle 837.png") center center no-repeat;
+  background-size: cover;
+  border-radius: 50px 0 0 50px;
+}
+.data .graphic .dots {
+  display: none;
+}
+.data .graphic .top-graphico {
+  padding: 20px;
+  background: grey;
+  width: fit-content;
+  border-radius: 50px;
+  margin: 30px;
+}
+.data .graphic .top-graphico p {
+  margin: 0;
+}
+.data .graphic .top-graphico p:after {
+  content: "€";
+}
+.data .last-move {
+  background: #333;
+  padding: 20px;
+  height: 100%;
+  border-radius: 0 50px 50px 0;
+}
+.data .last-move ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.data .last-move ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 100px;
+  color: green;
+  text-shadow: 0 0 0 1px white;
+}
+.data .last-move ul li:nth-last-child(3), .data .last-move ul li:last-child {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
