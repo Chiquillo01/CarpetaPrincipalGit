@@ -1,0 +1,452 @@
+@charset "UTF-8";
+/* CSS compartido entre las páginas */
+/* --------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  padding: 10px 0;
+  background-color: rgb(210, 210, 210);
+}
+
+.formatHeader {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Desplegables */
+.imgHeader {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  border-radius: 25px;
+  background-color: #b4b4b4;
+}
+
+/* Botón del iniciar sesión */
+.button_slide {
+  color: #fff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  padding: 16px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #807d7f;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #a8a8a8;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(32, 32, 32);
+}
+footer > div {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+footer * {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  color: #b4b4b4;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+footer a {
+  transition: all 140ms ease-in-out;
+}
+footer a:hover {
+  color: #ffffff;
+}
+footer .icons {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+footer .publi {
+  margin-top: 10px;
+}
+footer .lastSources span:first-child {
+  margin-right: 10px;
+}
+
+.icons {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(77, 77, 77);
+}
+/* --------------------- */
+/* --------------------- */
+
+/*CSS página HOME*/
+/* --------------------- */
+.cuerpoHome {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+  background-color: rgb(228, 228, 228);
+}
+
+.grafico {
+  width: 64%;
+  height: 300px;
+  border-radius: 25px 0 0 25px;
+  background-color: aqua;
+}
+
+.importantes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  width: 30%;
+  height: 300px;
+  padding-left: 60px;
+  border-radius: 0 25px 25px 0;
+  background-color: rgb(185, 185, 185);
+}
+
+.targetasC {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+.targeta {
+  padding: 10px 0 8px 20px;
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 4px;
+  font-size: 30px;
+  background-color: chocolate;
+}
+
+.bancoImg {
+  padding: 0 0 10px 60%;
+  height: 20px;
+  width: 30px;
+  text-align: right;
+}
+
+.ultimosMovimientos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 120px auto 450px 180px;
+  grid-template-rows: 50px 50px;
+  border-radius: 20px;
+  background-color: rgb(185, 185, 185);
+}
+
+.item-a {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 20px 0 0 20px;
+  background-color: cyan;
+}
+
+.item-b {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: crimson;
+}
+
+.item-c {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: cornflowerblue;
+}
+
+.item-d {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: green;
+}
+
+.item-e {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  border-radius: 0 20px 20px 0;
+  background-color: darkorange;
+}
+/* --------------------- */
+/* --------------------- */
+
+/* CSS página TRANSFERENCIAS */
+/* --------------------- */
+.cuerpoTransferencias {
+  display: flex;
+  background-color: rgb(228, 228, 228);
+  padding: 0 0 2% 3%;
+}
+
+h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top: 2%;
+}
+
+.inputFormTrans {
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 2%;
+  padding: 5px 0 5px 5px;
+  background-color: rgb(201, 201, 201);
+}
+
+::placeholder {
+  color: black;
+}
+
+.send {
+  border-radius: 10px;
+  border: none;
+  padding: 0 6px;
+  color: white;
+  background-color: rgb(201, 201, 201);
+}
+/* --------------------- */
+/* --------------------- */
+
+/*   CSS página CRYPTOS  */
+/* --------------------- */
+.tarjetas {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  overflow: auto;
+}
+.tarjetas::-webkit-scrollbar {
+  display: none;
+}
+.tarjetas p {
+  margin: 0;
+  font-size: 23px;
+}
+.tarjetas p:after {
+  content: "€";
+}
+.tarjetas .tarjeta {
+  background: rgba(0, 128, 0, 0.541);
+  padding: 5px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: end;
+  border-radius: 10px;
+  font-size: 23px;
+}
+.tarjetas .tarjeta svg {
+  width: 50px;
+  height: 50px;
+}
+.tarjetas .tarjeta:first-child {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.tarjetas .tarjeta:nth-child(2) {
+  background-color: rgba(179, 255, 0, 0.2);
+}
+.tarjetas .tarjeta:nth-child(3) {
+  background-color: rgba(255, 238, 0, 0.2);
+}
+.tarjetas .tarjeta:nth-child(4) {
+  background-color: rgba(0, 255, 242, 0.2);
+}
+.tarjetas .tarjeta:nth-child(5) {
+  background-color: rgba(234, 0, 255, 0.2);
+}
+.tarjetas .tarjeta:nth-child(6) {
+  background-color: rgba(0, 255, 13, 0.2);
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.data > * {
+  width: 50%;
+}
+.data .graphic {
+  background: url("assets/Rectangle 837.png") center center no-repeat;
+  background-size: cover;
+  border-radius: 50px 0 0 50px;
+}
+.data .graphic .dots {
+  display: none;
+}
+.data .graphic .top-graphico {
+  padding: 20px;
+  background: grey;
+  width: fit-content;
+  border-radius: 50px;
+  margin: 30px;
+}
+.data .graphic .top-graphico p {
+  margin: 0;
+}
+.data .graphic .top-graphico p:after {
+  content: "€";
+}
+.data .last-move {
+  background: #333;
+  padding: 20px;
+  height: 100%;
+  border-radius: 0 50px 50px 0;
+}
+.data .last-move ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.data .last-move ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 100px;
+  color: green;
+  text-shadow: 0 0 0 1px white;
+}
+.data .last-move ul li:nth-last-child(3),
+.data .last-move ul li:last-child {
+  color: red;
+}
+/* --------------------- */
+/* --------------------- */
+
+/*    CSS página Login   */
+/* --------------------- */
+.bodyLogin {
+  background-color: #eeeeee;
+}
+
+.container > p {
+  background: red;
+  display: flex;
+}
+
+.branding {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  margin: 2% 0 1% 45%;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  width: 60%;
+  border-radius: 20px;
+  margin-bottom: 2%;
+  box-shadow: 2px 2px 2px 2px rgb(105, 105, 105);
+}
+
+.formLogin {
+  width: 100%;
+  border-radius: 20%;
+  padding-left: 6%;
+}
+
+.formLogin > label {
+  text-align: left;
+  font-size: 20px;
+  width: 100%;
+}
+
+.formLogin > input {
+  border-radius: 10px;
+  height: 50px;
+  width: 80%;
+}
+
+button {
+  height: 40px;
+  border-radius: 20px;
+  background: white;
+}
+
+.container-remember {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.container-remember > button {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  justify-content: right;
+  border-radius: 30%;
+}
+
+.container-remember > p {
+  text-align: left;
+  font-size: 18px;
+  margin-left: 14px;
+}
+
+.container-box {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.buttons {
+  margin-left: 20%;
+}
+
+.reg {
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #cacaca;
+}
+
+.inic {
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background-color: #0e0b2b;
+}
+/* --------------------- */
+/* --------------------- */
+
+/*  CSS página Register  */
+/* --------------------- */
+
+/* --------------------- */
+/* --------------------- */
